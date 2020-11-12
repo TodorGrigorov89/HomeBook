@@ -12,13 +12,13 @@
                 name: "FirstName",
                 table: "AspNetUsers",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: string.Empty);
 
             migrationBuilder.AddColumn<string>(
                 name: "LastName",
                 table: "AspNetUsers",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: string.Empty);
 
             migrationBuilder.AddColumn<string>(
                 name: "MiddleName",
@@ -41,7 +41,7 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 30, nullable: false)
+                    Name = table.Column<string>(maxLength: 30, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -59,7 +59,7 @@
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     DocumentType = table.Column<int>(nullable: false),
-                    Description = table.Column<string>(maxLength: 6000, nullable: false)
+                    Description = table.Column<string>(maxLength: 6000, nullable: false),
                 },
                 constraints: table =>
                 {
@@ -77,7 +77,7 @@
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 30, nullable: false),
-                    CountryId = table.Column<int>(nullable: false)
+                    CountryId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -95,7 +95,7 @@
                 columns: table => new
                 {
                     ApplicationUserId = table.Column<string>(nullable: false),
-                    DocumentId = table.Column<int>(nullable: false)
+                    DocumentId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -126,7 +126,7 @@
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 40, nullable: false),
                     StreetNumber = table.Column<string>(maxLength: 5, nullable: false),
-                    CityId = table.Column<int>(nullable: false)
+                    CityId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -152,7 +152,7 @@
                     EntranceSign = table.Column<string>(maxLength: 4, nullable: false),
                     NumberOfEntrances = table.Column<int>(maxLength: 10, nullable: false),
                     NumberOfFloors = table.Column<int>(maxLength: 30, nullable: false),
-                    StreetId = table.Column<int>(nullable: false)
+                    StreetId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -179,7 +179,7 @@
                     Floor = table.Column<int>(maxLength: 30, nullable: false),
                     NumberOfResidents = table.Column<int>(maxLength: 10, nullable: false),
                     Area = table.Column<decimal>(nullable: false),
-                    BuildingId = table.Column<int>(nullable: false)
+                    BuildingId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

@@ -1,6 +1,10 @@
 ﻿namespace HomeBook.Data.Models
 {
-    public class UserDocument
+    using System;
+
+    using HomeBook.Data.Common.Models;
+
+    public class UserDocument : IDeletableEntity
     {
         public string ApplicationUserId { get; set; }
 
@@ -9,5 +13,9 @@
         public int DocumentId { get; set; }
 
         public virtual Document Document { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
     }
 }

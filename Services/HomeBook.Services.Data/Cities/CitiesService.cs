@@ -1,12 +1,15 @@
 ﻿namespace HomeBook.Services.Data.Cities
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HomeBook.Common;
     using HomeBook.Data.Common.Repositories;
     using HomeBook.Data.Models;
     using HomeBook.Services.Mapping;
+    using HomeBook.Web.ViewModels.Cities;
     using Microsoft.EntityFrameworkCore;
 
     public class CitiesService : ICitiesService
@@ -18,13 +21,22 @@
             this.citiesRepository = citiesRepository;
         }
 
-        public async Task AddAsync(string name, int countryId)
+        public async Task AddAsync(CityInputModel cityInputModel)
         {
-            await this.citiesRepository.AddAsync(new City
+            var city = new City
             {
-                Name = name,
-                CountryId = countryId,
-            });
+                Name = cityInputModel.Name,
+                CountryId = cityInputModel.CountryId,
+            };
+
+            bool doesCityExist = await this.citiesRepository.All().AnyAsync(x => x.Name == city.Name);
+
+            if (doesCityExist)
+            {
+                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.CityNameAlreadyExists, city.Name));
+            }
+
+            await this.citiesRepository.AddAsync(city);
             await this.citiesRepository.SaveChangesAsync();
         }
 
@@ -35,6 +47,7 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .To<T>().ToListAsync();
+
             return cities;
         }
 
@@ -45,6 +58,7 @@
                 .AllAsNoTracking()
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
+
             this.citiesRepository.Delete(city);
             await this.citiesRepository.SaveChangesAsync();
         }

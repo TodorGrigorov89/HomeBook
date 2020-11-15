@@ -1,12 +1,15 @@
 ﻿namespace HomeBook.Services.Data.Buildings
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HomeBook.Common;
     using HomeBook.Data.Common.Repositories;
     using HomeBook.Data.Models;
     using HomeBook.Services.Mapping;
+    using HomeBook.Web.ViewModels.Buildings;
     using Microsoft.EntityFrameworkCore;
 
     public class BuildingsService : IBuildingsService
@@ -18,15 +21,25 @@
             this.buildingsRepository = buildingsRepository;
         }
 
-        public async Task AddAsync(string entranceSign, int numberOfEntrances, int numberOfFloors, int streetId)
+        public async Task AddAsync(BuildingInputModel buildingInputModel)
         {
-            await this.buildingsRepository.AddAsync(new Building
+            var building = new Building
             {
-                EntranceSign = entranceSign,
-                NumberOfEntrances = numberOfEntrances,
-                NumberOfFloors = numberOfFloors,
-                StreetId = streetId,
-            });
+                BuildingFullAddress = buildingInputModel.BuildingFullAddress,
+                NumberOfEntrances = buildingInputModel.NumberOfEntrances,
+                NumberOfFloors = buildingInputModel.NumberOfFloors,
+                NumberOfApartments = buildingInputModel.NumberOfApartments,
+                StreetId = buildingInputModel.StreetId,
+            };
+
+            bool doesBuildingExist = await this.buildingsRepository.All().AnyAsync(x => x.BuildingFullAddress == building.BuildingFullAddress);
+
+            if (doesBuildingExist)
+            {
+                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.StreetNameAlreadyExists, building.BuildingFullAddress));
+            }
+
+            await this.buildingsRepository.AddAsync(building);
             await this.buildingsRepository.SaveChangesAsync();
         }
 
@@ -37,6 +50,7 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .To<T>().ToListAsync();
+
             return buildings;
         }
 
@@ -47,6 +61,7 @@
                 .AllAsNoTracking()
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
+
             this.buildingsRepository.Delete(building);
             await this.buildingsRepository.SaveChangesAsync();
         }

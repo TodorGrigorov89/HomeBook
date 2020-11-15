@@ -10,12 +10,12 @@
     {
         public Building()
         {
-            this.Apartments = new HashSet<Apartment>();
+            this.Entrances = new HashSet<Entrance>();
         }
 
         [Required]
-        [MaxLength(GlobalConstants.DataValidations.EntranceNumberMaxLength)]
-        public string EntranceSign { get; set; }
+        [MaxLength(GlobalConstants.DataValidations.BuildingFullAddressMaxLength)]
+        public string BuildingFullAddress { get; set; }
 
         [MaxLength(GlobalConstants.DataValidations.BuildingMaxEntrances)]
         public int NumberOfEntrances { get; set; }
@@ -23,10 +23,13 @@
         [MaxLength(GlobalConstants.DataValidations.BuildingMaxFloors)]
         public int NumberOfFloors { get; set; }
 
+        [MaxLength(GlobalConstants.DataValidations.ApartmentMaxNumber)]
+        public int NumberOfApartments { get; set; }
+
         public int StreetId { get; set; }
 
         public virtual Street Street { get; set; }
 
-        public virtual ICollection<Apartment> Apartments { get; set; }
+        public virtual ICollection<Entrance> Entrances { get; set; }
     }
 }

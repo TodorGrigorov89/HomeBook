@@ -17,10 +17,6 @@
         [MaxLength(GlobalConstants.DataValidations.StreetNameMaxLength)]
         public string Name { get; set; }
 
-        [Required]
-        [MaxLength(GlobalConstants.DataValidations.StreetNumberMaxLength)]
-        public string StreetNumber { get; set; }
-
         public int CityId { get; set; }
 
         public virtual City City { get; set; }

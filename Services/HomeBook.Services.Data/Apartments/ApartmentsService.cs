@@ -18,7 +18,7 @@
             this.apartmentsRepository = apartmentsRepository;
         }
 
-        public async Task AddAsync(string apartmentNumber, int floor, int numberOfResidents, decimal area, int buildingId)
+        public async Task AddAsync(string apartmentNumber, int floor, int numberOfResidents, decimal area, int entranceId)
         {
             await this.apartmentsRepository.AddAsync(new Apartment
             {
@@ -26,7 +26,7 @@
                 Floor = floor,
                 NumberOfResidents = numberOfResidents,
                 Area = area,
-                BuildingId = buildingId,
+                EntranceId = entranceId,
             });
             await this.apartmentsRepository.SaveChangesAsync();
         }

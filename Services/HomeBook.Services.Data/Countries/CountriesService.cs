@@ -1,12 +1,15 @@
 ﻿namespace HomeBook.Services.Data.Countries
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HomeBook.Common;
     using HomeBook.Data.Common.Repositories;
     using HomeBook.Data.Models;
     using HomeBook.Services.Mapping;
+    using HomeBook.Web.ViewModels.Countries;
     using Microsoft.EntityFrameworkCore;
 
     public class CountriesService : ICountriesService
@@ -18,12 +21,21 @@
             this.countriesRepository = countriesRepository;
         }
 
-        public async Task AddAsync(string name)
+        public async Task AddAsync(CountryInputModel countryInputModel)
         {
-            await this.countriesRepository.AddAsync(new Country
+            var country = new Country
             {
-                Name = name,
-            });
+                Name = countryInputModel.Name,
+            };
+
+            bool doesCountryExist = await this.countriesRepository.All().AnyAsync(x => x.Name == country.Name);
+
+            if (doesCountryExist)
+            {
+                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.CountryNameAlreadyExists, country.Name));
+            }
+
+            await this.countriesRepository.AddAsync(country);
             await this.countriesRepository.SaveChangesAsync();
         }
 
@@ -34,6 +46,7 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .To<T>().ToListAsync();
+
             return countries;
         }
 
@@ -44,6 +57,7 @@
                 .AllAsNoTracking()
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
+
             this.countriesRepository.Delete(country);
             await this.countriesRepository.SaveChangesAsync();
         }

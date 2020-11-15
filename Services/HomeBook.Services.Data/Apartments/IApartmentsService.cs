@@ -5,7 +5,7 @@
 
     public interface IApartmentsService
     {
-        Task AddAsync(string apartmentNumber, int floor, int numberOfResidents, decimal area, int buildingId);
+        Task AddAsync(string apartmentNumber, int floor, int numberOfResidents, decimal area, int entranceId);
 
         Task<IEnumerable<T>> GetAllAsync<T>();
 

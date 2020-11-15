@@ -3,9 +3,11 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using HomeBook.Web.ViewModels.Buildings;
+
     public interface IBuildingsService
     {
-        Task AddAsync(string entranceSign, int numberOfEntrances, int numberOfFloors, int streetId);
+        Task AddAsync(BuildingInputModel buildingInputModel);
 
         Task<IEnumerable<T>> GetAllAsync<T>();
 

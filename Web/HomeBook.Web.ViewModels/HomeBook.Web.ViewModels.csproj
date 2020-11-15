@@ -25,12 +25,8 @@
 
   <ItemGroup>
     <Folder Include="Apartments\" />
-    <Folder Include="Buildings\" />
-    <Folder Include="Cities\" />
-    <Folder Include="Countries\" />
     <Folder Include="Documents\" />
     <Folder Include="Payments\" />
-    <Folder Include="Streets\" />
     <Folder Include="UsersApartments\" />
     <Folder Include="UsersDocuments\" />
   </ItemGroup>

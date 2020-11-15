@@ -26,9 +26,9 @@
 
         public decimal Area { get; set; }
 
-        public int BuildingId { get; set; }
+        public int EntranceId { get; set; }
 
-        public virtual Building Building { get; set; }
+        public virtual Entrance Entrance { get; set; }
 
         public virtual ICollection<UserApartment> ApartmentUsers { get; set; }
 

@@ -34,14 +34,14 @@ namespace HomeBook.Data.Migrations
                     b.Property<decimal>("Area")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("BuildingId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("EntranceId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Floor")
                         .HasColumnType("int")
@@ -59,7 +59,7 @@ namespace HomeBook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BuildingId");
+                    b.HasIndex("EntranceId");
 
                     b.HasIndex("IsDeleted");
 
@@ -207,16 +207,16 @@ namespace HomeBook.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BuildingFullAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("EntranceSign")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(4)")
-                        .HasMaxLength(4);
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -224,9 +224,13 @@ namespace HomeBook.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("NumberOfApartments")
+                        .HasColumnType("int")
+                        .HasMaxLength(600);
+
                     b.Property<int>("NumberOfEntrances")
                         .HasColumnType("int")
-                        .HasMaxLength(10);
+                        .HasMaxLength(20);
 
                     b.Property<int>("NumberOfFloors")
                         .HasColumnType("int")
@@ -268,8 +272,8 @@ namespace HomeBook.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.HasKey("Id");
 
@@ -301,8 +305,8 @@ namespace HomeBook.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.HasKey("Id");
 
@@ -343,6 +347,41 @@ namespace HomeBook.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Documents");
+                });
+
+            modelBuilder.Entity("HomeBook.Data.Models.Entrance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BuildingId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EntranceAddressSign")
+                        .HasColumnType("nvarchar(4)")
+                        .HasMaxLength(4);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuildingId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Entrances");
                 });
 
             modelBuilder.Entity("HomeBook.Data.Models.Payment", b =>
@@ -430,13 +469,8 @@ namespace HomeBook.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(40)")
-                        .HasMaxLength(40);
-
-                    b.Property<string>("StreetNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(5)")
-                        .HasMaxLength(5);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
@@ -599,9 +633,9 @@ namespace HomeBook.Data.Migrations
 
             modelBuilder.Entity("HomeBook.Data.Models.Apartment", b =>
                 {
-                    b.HasOne("HomeBook.Data.Models.Building", "Building")
+                    b.HasOne("HomeBook.Data.Models.Entrance", "Entrance")
                         .WithMany("Apartments")
-                        .HasForeignKey("BuildingId")
+                        .HasForeignKey("EntranceId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
@@ -620,6 +654,15 @@ namespace HomeBook.Data.Migrations
                     b.HasOne("HomeBook.Data.Models.Country", "Country")
                         .WithMany("Cities")
                         .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("HomeBook.Data.Models.Entrance", b =>
+                {
+                    b.HasOne("HomeBook.Data.Models.Building", "Building")
+                        .WithMany("Entrances")
+                        .HasForeignKey("BuildingId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

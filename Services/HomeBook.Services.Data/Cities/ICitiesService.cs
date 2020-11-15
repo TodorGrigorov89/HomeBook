@@ -3,9 +3,11 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using HomeBook.Web.ViewModels.Cities;
+
     public interface ICitiesService
     {
-        Task AddAsync(string name, int countryId);
+        Task AddAsync(CityInputModel cityInputModel);
 
         Task<IEnumerable<T>> GetAllAsync<T>();
 

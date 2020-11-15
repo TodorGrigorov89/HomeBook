@@ -34,6 +34,8 @@
 
         public DbSet<Document> Documents { get; set; }
 
+        public DbSet<Entrance> Entrances { get; set; }
+
         public DbSet<Payment> Payments { get; set; }
 
         public DbSet<Street> Streets { get; set; }

@@ -1,12 +1,15 @@
 ﻿namespace HomeBook.Services.Data.Streets
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using HomeBook.Common;
     using HomeBook.Data.Common.Repositories;
     using HomeBook.Data.Models;
     using HomeBook.Services.Mapping;
+    using HomeBook.Web.ViewModels.Streets;
     using Microsoft.EntityFrameworkCore;
 
     public class StreetsService : IStreetsService
@@ -18,14 +21,22 @@
             this.streetsRepository = streetsRepository;
         }
 
-        public async Task AddAsync(string name, string streetNumber, int cityId)
+        public async Task AddAsync(StreetInputModel streetInputModel)
         {
-            await this.streetsRepository.AddAsync(new Street
+            var street = new Street
             {
-                Name = name,
-                StreetNumber = streetNumber,
-                CityId = cityId,
-            });
+                Name = streetInputModel.Name,
+                CityId = streetInputModel.CityId,
+            };
+
+            bool doesStreetExist = await this.streetsRepository.All().AnyAsync(x => x.Name == street.Name);
+
+            if (doesStreetExist)
+            {
+                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.StreetNameAlreadyExists, street.Name));
+            }
+
+            await this.streetsRepository.AddAsync(street);
             await this.streetsRepository.SaveChangesAsync();
         }
 
@@ -36,6 +47,7 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .To<T>().ToListAsync();
+
             return streets;
         }
 
@@ -46,6 +58,7 @@
                 .AllAsNoTracking()
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
+
             this.streetsRepository.Delete(street);
             await this.streetsRepository.SaveChangesAsync();
         }

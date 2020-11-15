@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\HomeBook.Data.Common\HomeBook.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\HomeBook.Data.Models\HomeBook.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\HomeBook.Web.ViewModels\HomeBook.Web.ViewModels.csproj" />
     <ProjectReference Include="..\HomeBook.Services.Mapping\HomeBook.Services.Mapping.csproj" />
   </ItemGroup>
 

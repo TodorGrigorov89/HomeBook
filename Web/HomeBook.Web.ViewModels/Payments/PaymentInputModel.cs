@@ -1,8 +1,6 @@
-﻿namespace HomeBook.Data.Models
+﻿namespace HomeBook.Web.ViewModels.Payments
 {
-    using HomeBook.Data.Common.Models;
-
-    public class Payment : BaseDeletableModel<int>
+    public class PaymentInputModel
     {
         public decimal ElevatorSubscription { get; set; }
 
@@ -20,10 +18,10 @@
 
         public bool? IsItPaid { get; set; }
 
-        public decimal TotalSum { get; set; }
+        public decimal TotalSum => this.ElevatorSubscription + this.ElevatorElectricity +
+                           this.StairElectricity + this.CleaningService + this.RunningCosts +
+                           this.RepairAndRestorationFund + this.HouseManagerFee;
 
         public int ApartmentId { get; set; }
-
-        public Apartment Apartment { get; set; }
     }
 }

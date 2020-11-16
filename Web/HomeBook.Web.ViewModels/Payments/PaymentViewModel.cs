@@ -1,8 +1,9 @@
-﻿namespace HomeBook.Data.Models
+﻿namespace HomeBook.Web.ViewModels.Payments
 {
-    using HomeBook.Data.Common.Models;
+    using HomeBook.Data.Models;
+    using HomeBook.Services.Mapping;
 
-    public class Payment : BaseDeletableModel<int>
+    public class PaymentViewModel : IMapFrom<Payment>
     {
         public decimal ElevatorSubscription { get; set; }
 
@@ -23,7 +24,5 @@
         public decimal TotalSum { get; set; }
 
         public int ApartmentId { get; set; }
-
-        public Apartment Apartment { get; set; }
     }
 }

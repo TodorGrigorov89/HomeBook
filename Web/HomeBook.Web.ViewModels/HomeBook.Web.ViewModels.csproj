@@ -24,10 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Apartments\" />
     <Folder Include="Documents\" />
-    <Folder Include="Payments\" />
-    <Folder Include="UsersApartments\" />
     <Folder Include="UsersDocuments\" />
   </ItemGroup>
 

@@ -24,7 +24,7 @@
         [MaxLength(GlobalConstants.DataValidations.ApartmentResidentsMaxNumber)]
         public int NumberOfResidents { get; set; }
 
-        public decimal Area { get; set; }
+        public double Area { get; set; }
 
         public int EntranceId { get; set; }
 

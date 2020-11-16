@@ -3,9 +3,11 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using HomeBook.Web.ViewModels.Apartments;
+
     public interface IApartmentsService
     {
-        Task AddAsync(string apartmentNumber, int floor, int numberOfResidents, decimal area, int entranceId);
+        Task AddAsync(ApartmentInputModel apartmentInputModel);
 
         Task<IEnumerable<T>> GetAllAsync<T>();
 

@@ -33,7 +33,7 @@
 
             if (doesEntranceExist)
             {
-                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.StreetNameAlreadyExists, entrance.EntranceAddressSign));
+                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.EntranceAddressSignExists, entrance.EntranceAddressSign));
             }
 
             await this.entrancesRepository.AddAsync(entrance);

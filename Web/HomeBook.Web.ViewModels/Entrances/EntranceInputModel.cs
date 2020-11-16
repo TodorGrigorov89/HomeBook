@@ -8,9 +8,9 @@
     {
         [Required]
         [StringLength(
-            GlobalConstants.DataValidations.EntranceMaxLength,
+            GlobalConstants.DataValidations.EntranceAddressMaxLength,
             ErrorMessage = GlobalConstants.ErrorMessages.EntranceAddressSignLength,
-            MinimumLength = GlobalConstants.DataValidations.EntranceMinLength)]
+            MinimumLength = GlobalConstants.DataValidations.EntranceAddressMinLength)]
         public string EntranceAddressSign { get; set; }
 
         public int BuildingId { get; set; }

@@ -49,17 +49,29 @@
 
             public const int BuildingMaxFloors = 30;
 
-            public const int EntranceMinLength = 1;
+            public const int EntranceAddressMinLength = 1;
 
-            public const int EntranceMaxLength = 4;
+            public const int EntranceAddressMaxLength = 4;
 
             public const int ApartmentMinNumber = 10;
 
             public const int ApartmentMaxNumber = 600;
 
+            public const int ApartmentNumberMinLength = 1;
+
             public const int ApartmentNumberMaxLengh = 4;
 
+            public const int ApartmentResidentsMinNumber = 0;
+
             public const int ApartmentResidentsMaxNumber = 10;
+
+            public const int ApartmentFloorMinNumber = 1;
+
+            public const int ApartmentFloorMaxNumber = 30;
+
+            public const double ApartmentMinArea = 30.0D;
+
+            public const double ApartmentMaxArea = 600.0D;
 
             public const int DescriptionMaxLength = 6000;
 
@@ -103,6 +115,18 @@
             public const string EntranceAddressSignLength = "Entrance address sign must be between 1 and 4 characters.";
 
             public const string EntranceAddressSignExists = "{0} already exists.";
+
+            public const string ApartmentNumberLength = "Apartment number must be between 1 and 4 characters.";
+
+            public const string ApartmentNumberExists = "{0} already exists.";
+
+            public const string UserNotFound = "User with id {0} is not found.";
+
+            public const string ApartmentNotFound = "Apartment with id {0} is not found.";
+
+            public const string UserApartmentExists = "Connection between user with id {0} and apartment with id {1} already exists.";
+
+            public const string PaymentExists = "Payment with id {0} already exists.";
 
             // public const string Title = "Title must be between 5 and 60 characters.";
             //

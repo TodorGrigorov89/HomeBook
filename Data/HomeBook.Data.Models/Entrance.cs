@@ -8,7 +8,7 @@
 
     public class Entrance : BaseDeletableModel<int>
     {
-        [MaxLength(GlobalConstants.DataValidations.EntranceMaxLength)]
+        [MaxLength(GlobalConstants.DataValidations.EntranceAddressMaxLength)]
         public string EntranceAddressSign { get; set; }
 
         public int BuildingId { get; set; }

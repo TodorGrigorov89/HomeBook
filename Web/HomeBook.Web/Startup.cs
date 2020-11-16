@@ -8,6 +8,16 @@
     using HomeBook.Data.Models;
     using HomeBook.Data.Repositories;
     using HomeBook.Data.Seeding;
+    using HomeBook.Services.Data.Apartments;
+    using HomeBook.Services.Data.Buildings;
+    using HomeBook.Services.Data.Cities;
+    using HomeBook.Services.Data.Countries;
+    using HomeBook.Services.Data.Documents;
+    using HomeBook.Services.Data.Entrances;
+    using HomeBook.Services.Data.Payments;
+    using HomeBook.Services.Data.Streets;
+    using HomeBook.Services.Data.UsersApartments;
+    using HomeBook.Services.Data.UsersDocuments;
     using HomeBook.Services.Mapping;
     using HomeBook.Services.Messaging;
     using HomeBook.Web.ViewModels;
@@ -62,6 +72,16 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IApartmentsService, ApartmentsService>();
+            services.AddTransient<IBuildingsService, BuildingsService>();
+            services.AddTransient<ICitiesService, CitiesService>();
+            services.AddTransient<ICountriesService, CountriesService>();
+            services.AddTransient<IDocumentsService, DocumentsService>();
+            services.AddTransient<IEntrancesService, EntrancesService>();
+            services.AddTransient<IPaymentsService, PaymentsService>();
+            services.AddTransient<IStreetsService, StreetsService>();
+            services.AddTransient<IUsersApartmentsService, UsersApartmentsService>();
+            services.AddTransient<IUsersDocumentsService, UsersDocumentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -33,6 +33,7 @@
                 RepairAndRestorationFund = paymentInputModel.RepairAndRestorationFund,
                 HouseManagerFee = paymentInputModel.HouseManagerFee,
                 IsItPaid = paymentInputModel?.IsItPaid,
+                TotalSum = paymentInputModel.TotalSum,
                 ApartmentId = paymentInputModel.ApartmentId,
             };
 

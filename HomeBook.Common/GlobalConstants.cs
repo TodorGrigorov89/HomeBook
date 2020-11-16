@@ -73,6 +73,8 @@
 
             public const double ApartmentMaxArea = 600.0D;
 
+            public const int DescriptionMinLength = 10;
+
             public const int DescriptionMaxLength = 6000;
 
             // public const int TitleMaxLength = 60;
@@ -127,6 +129,12 @@
             public const string UserApartmentExists = "Connection between user with id {0} and apartment with id {1} already exists.";
 
             public const string PaymentExists = "Payment with id {0} already exists.";
+
+            public const string DescriptionLength = "Description length must be between 10 and 6000 characters.";
+
+            public const string DocumentNotFound = "Dcoument with id {0} is not found.";
+
+            public const string UserDocumentExists = "Connection between user with id {0} and document with id {1} already exists.";
 
             // public const string Title = "Title must be between 5 and 60 characters.";
             //

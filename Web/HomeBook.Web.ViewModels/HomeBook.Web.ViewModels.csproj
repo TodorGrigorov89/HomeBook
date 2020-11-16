@@ -23,9 +23,4 @@
     <ProjectReference Include="..\..\Services\HomeBook.Services.Mapping\HomeBook.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Documents\" />
-    <Folder Include="UsersDocuments\" />
-  </ItemGroup>
-
 </Project>

@@ -26,9 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Documents\" />
     <Folder Include="UsersApartments\" />
-    <Folder Include="UsersDocuments\" />
   </ItemGroup>
 
 </Project>

@@ -8,11 +8,25 @@
 
         public const string CloudName = "HomeBook";
 
+        public const string HomeBookAddress = "Bulgaria, Varna 9000";
+
+        public const string HomeBookPhoneNumber = "+359 887 665 232";
+
+        public const string HomeBookGitHub = "https://github.com/TodorGrigorov89/HomeBook";
+
+        public const string HomeBookTwitter = "https://twitter.com/BookBulgaria";
+
+        public const string HomeBookFacebook = "https://www.facebook.com/HomeBook-Bulgaria-103098581649585";
+
+        public const string HomeBookInstagram = "https://www.instagram.com/homebookbulgaria/";
+
+        public const string HomeBookLinkedIn = "https://www.linkedin.com/in/homebook-bulgaria-08b369200/";
+
         public static class AccountsSeeding
         {
             public const string Password = "123456";
 
-            public const string AdminEmail = "admin@homebook.com";
+            public const string AdminEmail = "homebookbulgaria@gmail.com";
 
             public const string UserEmail = "user@homebook.com";
         }
@@ -77,6 +91,18 @@
 
             public const int DescriptionMaxLength = 6000;
 
+            public const int ContactFormTitleMinLength = 5;
+
+            public const int ContactFormTitleMaxLength = 100;
+
+            public const int ContactFormContentMinLength = 20;
+
+            public const int ContactFormContentMaxLength = 5000;
+
+            public const int ContactFormNameMinLength = 5;
+
+            public const int ContactFormNameMaxLength = 50;
+
             // public const int TitleMaxLength = 60;
             //
             // public const int TitleMinLength = 5;
@@ -135,6 +161,12 @@
             public const string DocumentNotFound = "Dcoument with id {0} is not found.";
 
             public const string UserDocumentExists = "Connection between user with id {0} and document with id {1} already exists.";
+
+            public const string ContactFormTitleLength = "Title length must be between 5 and 100 characters.";
+
+            public const string ContactFormContentLength = "Content length must be between 20 and 5000 characters.";
+
+            public const string ContactFormNameLength = "Name length must be between 5 and 50 characters.";
 
             // public const string Title = "Title must be between 5 and 60 characters.";
             //

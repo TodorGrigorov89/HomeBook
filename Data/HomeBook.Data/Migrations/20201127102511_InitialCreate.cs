@@ -45,9 +45,9 @@
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: false),
+                    LastName = table.Column<string>(nullable: true),
                     Owner = table.Column<bool>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
@@ -57,6 +57,24 @@
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ContactForms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true),
+                    Content = table.Column<string>(nullable: true),
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactForms", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -338,7 +356,7 @@
                     ApartmentNumber = table.Column<string>(maxLength: 4, nullable: false),
                     Floor = table.Column<int>(maxLength: 30, nullable: false),
                     NumberOfResidents = table.Column<int>(maxLength: 10, nullable: false),
-                    Area = table.Column<decimal>(nullable: false),
+                    Area = table.Column<double>(nullable: false),
                     EntranceId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
@@ -369,7 +387,6 @@
                     RunningCosts = table.Column<decimal>(nullable: false),
                     RepairAndRestorationFund = table.Column<decimal>(nullable: false),
                     HouseManagerFee = table.Column<decimal>(nullable: false),
-                    PastUnpaidBill = table.Column<decimal>(nullable: true),
                     IsItPaid = table.Column<bool>(nullable: true),
                     TotalSum = table.Column<decimal>(nullable: false),
                     ApartmentId = table.Column<int>(nullable: false),
@@ -567,6 +584,9 @@
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ContactForms");
 
             migrationBuilder.DropTable(
                 name: "Payments");

@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using HomeBook.Data.Seeding.CustomSeeders;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
 
@@ -26,6 +27,17 @@
             var seeders = new List<ISeeder>
                           {
                               new RolesSeeder(),
+                              new AccountsSeeder(),
+                              new CountriesSeeder(),
+                              new CitiesSeeder(),
+                              new StreetsSeeder(),
+                              new BuildingsSeeder(),
+                              new EntrancesSeeder(),
+                              new ApartmentsSeeder(),
+                              new PaymentsSeeder(),
+                              new UserApartments(),
+                              new DocumentsSeeder(),
+                              new UserDocumentsSeeder(),
                           };
 
             foreach (var seeder in seeders)

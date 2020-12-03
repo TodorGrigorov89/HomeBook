@@ -28,7 +28,7 @@
 
             public const string AdminEmail = "homebookbulgaria@gmail.com";
 
-            public const string UserEmail = "user@homebook.com";
+            public const string UserEmail = "todorgrigorov89@gmail.com";
         }
 
         public static class DataValidations

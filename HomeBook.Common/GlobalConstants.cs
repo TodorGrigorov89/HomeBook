@@ -180,5 +180,22 @@
             //
             // public const string Address = "Address must be between 5 and 100 characters.";
         }
+
+        public static class SeededDataCounts
+        {
+            public const int Countries = 1;
+
+            public const int Cities = 3;
+
+            public const int Streets = 1;
+
+            public const int Buildings = 1;
+
+            public const int Entrances = 1;
+
+            public const int Apartments = 32;
+
+            public const int Documents = 1;
+        }
     }
 }

@@ -1,6 +1,91 @@
 ﻿@model HomeBook.Web.ViewModels.Administration.Dashboard.IndexViewModel
+@using HomeBook.Common
 @{
     this.ViewData["Title"] = "Admin dashboard";
 }
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+
+<br />
+<br />
+<br />
+<br />
 
 <h1>@this.ViewData["Title"]</h1>
+
+<div>
+    <a asp-area="Administration" asp-controller="Countries" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Countries</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Countries" asp-action="AddCountry">Add New Country</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Cities" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Cities</a>
+
+    <dvi class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Cities" asp-action="AddCity">Add New City</a>
+    </dvi>
+
+    <a asp-area="Administration" asp-controller="Streets" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Streets</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Streets" asp-action="AddStreet">Add New Street</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Buildings" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Buildings</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Buildings" asp-action="AddBuilding">Add New Building</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Entrances" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Entrances</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Entrances" asp-action="AddEntrance">Add New Entrance</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Apartments" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Apartments</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Apartments" asp-action="AddApartment">Add New Apartment</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Payments" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Payments</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Payments" asp-action="AddPayment">Add New Payment</a>
+    </div>
+
+    <a asp-area="Administration" asp-controller="Documents" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Documents</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="Documents" asp-action="AddDocument">Add New Document</a>
+    </div>
+</div>
+

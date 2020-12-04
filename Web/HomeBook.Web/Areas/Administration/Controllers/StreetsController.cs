@@ -1,5 +1,6 @@
 ﻿namespace HomeBook.Web.Areas.Administration.Controllers
 {
+    using System;
     using System.Threading.Tasks;
 
     using HomeBook.Common;
@@ -45,7 +46,14 @@
                 return this.View(streetInputModel);
             }
 
-            await this.streetsService.AddAsync(streetInputModel);
+            try
+            {
+                await this.streetsService.AddAsync(streetInputModel);
+            }
+            catch (Exception)
+            {
+                return this.View("DuplicateValue", streetInputModel);
+            }
 
             return this.RedirectToAction("Index");
         }

@@ -5,6 +5,8 @@
 
     public class BuildingViewModel : IMapFrom<Building>
     {
+        public int Id { get; set; }
+
         public string BuildingFullAddress { get; set; }
 
         public int NumberOfEntrances { get; set; }

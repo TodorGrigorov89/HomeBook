@@ -30,10 +30,17 @@
             };
 
             bool doesStreetExist = await this.streetsRepository.All().AnyAsync(x => x.Name == street.Name);
+            bool doesStreetWithCurrentCityIdExist = await this.streetsRepository.All().AnyAsync(x => x.Name == street.Name && x.CityId == street.CityId);
 
             if (doesStreetExist)
             {
-                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.StreetNameAlreadyExists, street.Name));
+                if (!doesStreetWithCurrentCityIdExist)
+                {
+                }
+                else
+                {
+                    throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.CityNameAlreadyExists, street.Name));
+                }
             }
 
             await this.streetsRepository.AddAsync(street);

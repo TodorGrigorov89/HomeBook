@@ -30,10 +30,17 @@
             };
 
             bool doesCityExist = await this.citiesRepository.All().AnyAsync(x => x.Name == city.Name);
+            bool doesCityWithCurrentCountryIdExist = await this.citiesRepository.All().AnyAsync(x => x.Name == city.Name && x.CountryId == city.CountryId);
 
             if (doesCityExist)
             {
-                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.CityNameAlreadyExists, city.Name));
+                if (!doesCityWithCurrentCountryIdExist)
+                {
+                }
+                else
+                {
+                    throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.CityNameAlreadyExists, city.Name));
+                }
             }
 
             await this.citiesRepository.AddAsync(city);

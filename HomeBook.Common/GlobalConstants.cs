@@ -51,7 +51,7 @@
 
             public const int EntranceNumberMaxLength = 4;
 
-            public const int BuildingFullAddressMinLength = 1;
+            public const int BuildingFullAddressMinLength = 5;
 
             public const int BuildingFullAddressMaxLength = 40;
 
@@ -136,7 +136,7 @@
 
             public const string StreetNameAlreadyExists = "{0} already exists.";
 
-            public const string BuildingFullAddressLength = "Building full address must be between 1 and 40 characters.";
+            public const string BuildingFullAddressLength = "Building full address must be between 5 and 40 characters.";
 
             public const string BuildingFullAddressAlreadyExists = "{0} already exists.";
 
@@ -167,6 +167,10 @@
             public const string ContactFormContentLength = "Content length must be between 20 and 5000 characters.";
 
             public const string ContactFormNameLength = "Name length must be between 5 and 50 characters.";
+
+            public const string PageNotFound = "The page is not found. Looks like we can't find what you're looking for.";
+
+            public const string DuplicateValue = "The value you are trying to enter already exists.";
 
             // public const string Title = "Title must be between 5 and 60 characters.";
             //

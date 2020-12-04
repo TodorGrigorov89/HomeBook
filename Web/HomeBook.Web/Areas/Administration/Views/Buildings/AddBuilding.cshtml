@@ -1,0 +1,81 @@
+﻿@model HomeBook.Web.ViewModels.Buildings.BuildingInputModel
+@using HomeBook.Common
+@{ this.ViewData["Title"] = "Add Building";
+    var streets = this.ViewData["Streets"] as SelectList;}
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<div class="col-lg-6">
+    <h2>New Building</h2>
+    <form method="post" enctype="multipart/form-data" class="pt-4">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Building full address</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.BuildingFullAddress" class="form-control" required="required">
+                <span asp-validation-for="BuildingFullAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Number of entrances</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.NumberOfEntrances" class="form-control" required="required">
+                <span asp-validation-for="NumberOfEntrances" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Number of floors</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.NumberOfFloors" class="form-control" required="required">
+                <span asp-validation-for="NumberOfFloors" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Number of apartments</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.NumberOfApartments" class="form-control" required="required">
+                <span asp-validation-for="NumberOfApartments" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-10">
+                <select asp-for="@Model.StreetId" class="form-control" asp-items="@streets">
+                </select>
+                <span asp-validation-for="StreetId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-success"
+                        asp-area="Administration" asp-controller="Buildings" asp-action="AddBuilding">
+                    Add Building
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-danger" asp-area="Administration" asp-controller="Buildings" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

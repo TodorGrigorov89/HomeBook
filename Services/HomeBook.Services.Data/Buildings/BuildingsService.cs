@@ -33,10 +33,19 @@
             };
 
             bool doesBuildingExist = await this.buildingsRepository.All().AnyAsync(x => x.BuildingFullAddress == building.BuildingFullAddress);
+            bool doesBuildingWithCurrentStreetIdExist = await this.buildingsRepository
+                                                        .All().AnyAsync(x => x.BuildingFullAddress == building.BuildingFullAddress &&
+                                                        x.StreetId == building.StreetId);
 
             if (doesBuildingExist)
             {
-                throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.StreetNameAlreadyExists, building.BuildingFullAddress));
+                if (!doesBuildingWithCurrentStreetIdExist)
+                {
+                }
+                else
+                {
+                    throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.BuildingFullAddressAlreadyExists, building.BuildingFullAddress));
+                }
             }
 
             await this.buildingsRepository.AddAsync(building);

@@ -32,7 +32,6 @@
                 RunningCosts = paymentInputModel.RunningCosts,
                 RepairAndRestorationFund = paymentInputModel.RepairAndRestorationFund,
                 HouseManagerFee = paymentInputModel.HouseManagerFee,
-                IsItPaid = paymentInputModel?.IsItPaid,
                 TotalSum = paymentInputModel.TotalSum,
                 ApartmentId = paymentInputModel.ApartmentId,
             };
@@ -44,6 +43,7 @@
                 throw new ArgumentException(string.Format(GlobalConstants.ErrorMessages.PaymentExists, payment.Id));
             }
 
+            payment.IsItPaid = false;
             await this.paymentsRepository.AddAsync(payment);
             await this.paymentsRepository.SaveChangesAsync();
         }
@@ -67,6 +67,7 @@
                 .Where(x => x.Id == id)
                 .FirstOrDefaultAsync();
 
+            payment.IsItPaid = true;
             this.paymentsRepository.Delete(payment);
             await this.paymentsRepository.SaveChangesAsync();
         }

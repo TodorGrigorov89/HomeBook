@@ -6,6 +6,8 @@
 
     public class DocumentViewModel : IMapFrom<Document>
     {
+        public int Id { get; set; }
+
         public DocumentType DocumentType { get; set; }
 
         public string Description { get; set; }

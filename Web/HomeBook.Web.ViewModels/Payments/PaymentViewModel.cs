@@ -5,6 +5,8 @@
 
     public class PaymentViewModel : IMapFrom<Payment>
     {
+        public int Id { get; set; }
+
         public decimal ElevatorSubscription { get; set; }
 
         public decimal ElevatorElectricity { get; set; }

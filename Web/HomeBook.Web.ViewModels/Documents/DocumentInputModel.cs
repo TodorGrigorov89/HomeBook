@@ -7,7 +7,8 @@
 
     public class DocumentInputModel
     {
-        [Required]
+        [Required(ErrorMessage = GlobalConstants.ErrorMessages.DocumentType)]
+        [RegularExpression(@"^(Protocol|Complaint)$", ErrorMessage = GlobalConstants.ErrorMessages.DocumentType)]
         [EnumDataType(typeof(DocumentType))]
         public DocumentType DocumentType { get; set; }
 

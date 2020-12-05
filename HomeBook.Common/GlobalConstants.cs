@@ -160,6 +160,8 @@
 
             public const string DocumentNotFound = "Dcoument with id {0} is not found.";
 
+            public const string DocumentType = "Document type must be Protocol or Complaint.";
+
             public const string UserDocumentExists = "Connection between user with id {0} and document with id {1} already exists.";
 
             public const string ContactFormTitleLength = "Title length must be between 5 and 100 characters.";
@@ -198,6 +200,8 @@
             public const int Entrances = 1;
 
             public const int Apartments = 32;
+
+            public const int Payments = 1;
 
             public const int Documents = 1;
         }

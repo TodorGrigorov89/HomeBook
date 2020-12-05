@@ -1,0 +1,101 @@
+﻿@model HomeBook.Web.ViewModels.Payments.PaymentInputModel
+@using HomeBook.Common
+@{ this.ViewData["Title"] = "Add Payment";
+    var apartments = this.ViewData["Apartments"] as SelectList;}
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<div class="col-lg-6">
+    <h2>New Payment</h2>
+    <form method="post" enctype="multipart/form-data" class="pt-4">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Apartment Id</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.ApartmentId" class="form-control" required="required">
+                <span asp-validation-for="ApartmentId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Elevator subscription</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.ElevatorSubscription" class="form-control" required="required">
+                <span asp-validation-for="ElevatorSubscription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Elevator electricity</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.ElevatorElectricity" class="form-control" required="required">
+                <span asp-validation-for="ElevatorElectricity" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Stair electricity</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.StairElectricity" class="form-control" required="required">
+                <span asp-validation-for="StairElectricity" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Cleaning service</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.CleaningService" class="form-control" required="required">
+                <span asp-validation-for="CleaningService" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Running costs</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.RunningCosts" class="form-control" required="required">
+                <span asp-validation-for="RunningCosts" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Repair and restoration fund</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.RepairAndRestorationFund" class="form-control" required="required">
+                <span asp-validation-for="RepairAndRestorationFund" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">House manager fee</label>
+            <div class="col-sm-10">
+                <input type="text" asp-for="@Model.HouseManagerFee" class="form-control" required="required">
+                <span asp-validation-for="HouseManagerFee" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-success"
+                        asp-area="Administration" asp-controller="Payments" asp-action="AddPayment">
+                    Add Payment
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <a class="btn btn-danger" asp-area="Administration" asp-controller="Payments" asp-action="Index">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

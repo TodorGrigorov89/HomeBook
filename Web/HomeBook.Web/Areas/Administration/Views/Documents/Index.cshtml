@@ -1,0 +1,71 @@
+﻿@model HomeBook.Web.ViewModels.Documents.DocumentsListViewModel
+@using HomeBook.Common
+@{ this.ViewData["Title"] = "Documents"; }
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<h2>
+    All Documents (@Model.Documents.Count())
+    <span>
+        <a class="btn btn-info" asp-area="Administration" asp-controller="Documents" asp-action="AddDocument">Add New Document</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Document Type</th>
+            <th scope="col">Document users</th>
+            <th scope="col">Description</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var document in this.Model.Documents)
+        {
+            <tr>
+               <th scope="row">@document.DocumentType</th>
+               <td>@document.DocumentUsersCount</td>
+               <td>@document.Description</td>
+               <td>
+                   @if (document.Id <= GlobalConstants.SeededDataCounts.Documents)
+                   {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded Data <br />Cannot Be Deleted
+                        </div> }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                asp-area="Administration" asp-controller="Documents" asp-action="DeleteDocument" asp-route-id="@document.Id">
+                                Delete
+                             </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

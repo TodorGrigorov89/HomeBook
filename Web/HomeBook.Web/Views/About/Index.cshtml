@@ -1,5 +1,5 @@
 ﻿@using HomeBook.Common
-@model HomeBook.Web.ViewModels.ContactForm.ContactFormViewModel
+@model HomeBook.Web.ViewModels.About.FactsSectionViewModel
 @{
     this.ViewData["Title"] = "About Page";
 }
@@ -89,20 +89,17 @@
                         <img src="~/img/about.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                        <p class="font-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
-                        </p>
+                        <h3>What are the benefits when choosing Homebook as your house manager?</h3>
                         <ul>
-                            <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            <li><i class="icofont-check-circled"></i> We will improve the collection of monthly entrance fees.</li>
+                            <li><i class="icofont-check-circled"></i> We will keep precisely the necessary documentation, according to the normative requirements.</li>
+                            <li><i class="icofont-check-circled"></i> we have experience in solving various cases and problems.</li>
                         </ul>
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
+                            Homebook is a trademark of Homebook Bulgaria OOD. The company was established in 2020 and its goals are to offer services and products to citizens, owners, users or residents of individual sites and common areas in co-ownership in residential and commercial buildings. The services offered are in line with the amendments to the condominium management law (LSMA) adopted in 2010.
+                            A team of young and educated specialists will replace the current house manager in your entrance, each of them - a specialist in their work will monitor the quality of service and services provided for your common parts in co-ownership. Better cleaning, higher level of service of your elevator and the elevator cage, higher illumination of the stairwell, greater security for the access regime in the building, more pleasant appearance of the building and its adjacent areas, landscaping and maintenance of lawns, keeping all the necessary documentation, preparation of parking strategies for owners and tenants and reconstruction of designated areas and areas, management of common areas for commercial purposes (rental if possible of roofs, canopies and gables) for advertising, ground, underground and basement premises for business purposes) and a large number of other services.
+
+                            Our goals are for the entrance where you live to be cleaned, lit, locked, with secured parking spaces. In the long run, we want to make the building energy efficient, with green areas and playgrounds without burdening your family budget.
                         </p>
                     </div>
                 </div>
@@ -116,75 +113,36 @@
                 <div class="row counters">
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">232</span>
+                        <span data-toggle="counter-up">@Model.Cities.Count()</span>
+                        <p>Cities</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">@Model.Buildings.Count()</span>
+                        <p>Buildings</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">@Model.Apartments.Count()</span>
+                        <p>Apartments</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">@Model.Users.Count()</span>
                         <p>Clients</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">521</span>
-                        <p>Projects</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">1,463</span>
-                        <p>Hours Of Support</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">15</span>
-                        <p>Hard Workers</p>
                     </div>
 
                 </div>
 
             </div>
         </section><!-- End Facts Section -->
-        <!-- ======= Our Skills Section ======= -->
-        <section class="skills" data-aos="fade-up">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Our Skills</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="skills-content">
-
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">HTML <i class="val">100%</i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">CSS <i class="val">90%</i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">JavaScript <i class="val">75%</i></span>
-                        </div>
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                            <span class="skill">Photoshop <i class="val">55%</i></span>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Our Skills Section -->
-        <!-- ======= Tetstimonials Section ======= -->
+        <!-- ======= Testimonials Section ======= -->
         <section class="testimonials" data-aos="fade-up">
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Tetstimonials</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Testimonials</h2>
+                    <p>A small part of the positive comments from our satisfied customers.</p>
                 </div>
 
                 <div class="owl-carousel testimonials-carousel">
@@ -195,7 +153,7 @@
                         <h4>Ceo &amp; Founder</h4>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                            After a long search, we finally came across a reliable and well-established company like Homebook.
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                     </div>
@@ -206,7 +164,7 @@
                         <h4>Designer</h4>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                            I'm extremely pleased with the results achieved with the company Homebook, as well as their correct attitude.
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                     </div>
@@ -217,7 +175,7 @@
                         <h4>Store Owner</h4>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                            The best experts on the market!
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                     </div>
@@ -228,7 +186,7 @@
                         <h4>Freelancer</h4>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                            Homebook offers quality and fast service!
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                     </div>
@@ -239,7 +197,7 @@
                         <h4>Entrepreneur</h4>
                         <p>
                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                            They always solve neighborhood problems in the most trouble-free way.
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                     </div>
@@ -247,7 +205,7 @@
                 </div>
 
             </div>
-        </section><!-- End Ttstimonials Section -->
+        </section><!-- End Testimonials Section -->
 
     </main><!-- End #main -->
 

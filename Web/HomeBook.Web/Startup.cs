@@ -16,6 +16,7 @@
     using HomeBook.Services.Data.Entrances;
     using HomeBook.Services.Data.Payments;
     using HomeBook.Services.Data.Streets;
+    using HomeBook.Services.Data.Users;
     using HomeBook.Services.Data.UsersApartments;
     using HomeBook.Services.Data.UsersDocuments;
     using HomeBook.Services.Mapping;
@@ -80,6 +81,7 @@
             services.AddTransient<IEntrancesService, EntrancesService>();
             services.AddTransient<IPaymentsService, PaymentsService>();
             services.AddTransient<IStreetsService, StreetsService>();
+            services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IUsersApartmentsService, UsersApartmentsService>();
             services.AddTransient<IUsersDocumentsService, UsersDocumentsService>();
         }

@@ -27,29 +27,6 @@
 
 </head>
 <body>
-    @*<header>
-            <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <partial name="_LoginPartial" />
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>*@
-    <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-transparent">
         <div class="container">
 
@@ -88,8 +65,8 @@
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Services" asp-action="Index">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Home" asp-action="TermsOfService">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
                         </ul>
                     </div>
@@ -97,11 +74,10 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Services" asp-action="Index">Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Services" asp-action="Index">Maintenance</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Services" asp-action="Index">Cleaning</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a asp-area="" asp-controller="Services" asp-action="Index">Taxes and Payments</a></li>
                         </ul>
                     </div>
 

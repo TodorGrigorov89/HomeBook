@@ -18,6 +18,11 @@
             return this.View();
         }
 
+        public IActionResult TermsOfService()
+        {
+            return this.View();
+        }
+
         [Route("/Home/Error/404")]
         public IActionResult Error404()
         {

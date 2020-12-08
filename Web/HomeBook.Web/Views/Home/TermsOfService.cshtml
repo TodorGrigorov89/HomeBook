@@ -1,0 +1,100 @@
+﻿@{
+    this.ViewData["Title"] = "Terms of service";
+}
+@using HomeBook.Common
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li class="active"><a asp-area="" asp-controller="Services" asp-action="Index">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<h1>@this.ViewData["Title"]</h1>
+
+<div class="col-lg-12">
+    <p>
+        Please read these terms of service ("terms of service", "terms") carefully before using @GlobalConstants.SystemName website (“website”, "service") operated by @GlobalConstants.SystemName ("us", 'we", "our").
+    </p>
+
+    <div class="about_text_highlight">
+        <h3>
+            Conditions of use
+        </h3>
+    </div>
+
+    <p>
+        By using this website, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to leave the website accordingly. @GlobalConstants.SystemName only grants use and access of this website, its products, and its services to those who have accepted its terms.
+    </p>
+
+    <div class="about_text_highlight">
+        <h3>
+            Privacy policy
+        </h3>
+    </div>
+
+    <p>
+        Before you continue using our website, we advise you to read our privacy policy regarding our user data collection. It will help you better understand our practices.
+    </p>
+
+    <div class="about_text_highlight">
+        <h3>
+            Age restriction
+        </h3>
+    </div>
+
+    <p>
+        You must be at least 18 (eighteen) years of age before you can use this website. By using this website, you warrant that you are at least 18 years of age and you may legally adhere to this Agreement. @GlobalConstants.SystemName assumes no responsibility for liabilities related to age misrepresentation.
+    </p>
+
+    <div class="about_text_highlight">
+        <h3>
+            Intellectual property
+        </h3>
+    </div>
+
+    <p>
+        You agree that all materials, products, and services provided on this website are the property of @GlobalConstants.SystemName, its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property. You also agree that you will not reproduce or redistribute the @GlobalConstants.SystemName’s intellectual property in any way, including electronic, digital, or new trademark registrations.
+        You grant @GlobalConstants.SystemName a royalty-free and non-exclusive license to display, use, copy, transmit, and broadcast the content you upload and publish. For issues regarding intellectual property claims, you should contact the company in order to come to an agreement.
+
+    </p>
+    <div class="about_text_highlight">
+        <h3>
+            User accounts
+        </h3>
+    </div>
+
+    <p>
+        As a user of this website, you may be asked to register with us and provide private information. You are responsible for ensuring the accuracy of this information, and you are responsible for maintaining the safety and security of your identifying information. You are also responsible for all activities that occur under your account or password.
+        If you think there are any possible issues regarding the security of your account on the website, inform us immediately so we may address it accordingly.
+        We reserve all rights to terminate accounts, edit or remove content and cancel orders in their sole discretion.
+
+    </p>
+    <div class="about_text_highlight">
+        <h3>
+            Applicable law
+        </h3>
+    </div>
+
+    <p>
+        By visiting this website, you agree that the laws of your location, without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between @GlobalConstants.SystemName and you, or its business partners and associates.
+
+    </p>
+</div>

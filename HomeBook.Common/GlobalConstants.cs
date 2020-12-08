@@ -204,6 +204,8 @@
             public const int Payments = 1;
 
             public const int Documents = 1;
+
+            public const int UserApartments = 1;
         }
     }
 }

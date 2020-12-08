@@ -1,4 +1,11 @@
 ﻿@using HomeBook.Common
+@using HomeBook.Data.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    this.ViewData["Title"] = "Services";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,48 +83,6 @@
 
             </div>
         </section><!-- End Our Services Section -->
-        <!-- ======= Services Section ======= -->
-        <section class="services">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-                        <div class="icon-box icon-box-pink">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-box icon-box-cyan">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-box icon-box-green">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-box icon-box-blue">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Services Section -->
-
         <!-- ======= Service Details Section ======= -->
         <section class="service-details">
             <div class="container">
@@ -129,9 +94,17 @@
                                 <img src="~/img/service-details-1.jpg" alt="...">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="#">Our Mission</a></h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                                <h5 class="card-title">Check for unpaid bills</h5>
+                                <p class="card-text">Here you can check if you have unpaid bills and taxes.</p>
+                                @if (this.SignInManager.IsSignedIn(this.User))
+                                {
+                                    <div class="btn-get-started text-center"><a asp-area="" asp-controller="Services" asp-action="Bills"><i class="icofont-arrow-right"></i> Check now</a></div>
+
+                                }
+                                else
+                                {
+                                    <div class="read-more text-center"><a asp-area="Identity" asp-page="/Account/Login"><i class="icofont-arrow-right"></i> Check now</a></div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -182,7 +155,7 @@
 
                 <div class="section-title">
                     <h2>Pricing</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>We will improve the collection of monthly entrance fees. We will ensure transparency of your building financial fund. We will provide you with 24-hour access to our system, for checking current obligations, etc.</p>
                 </div>
 
                 <div class="row no-gutters">
@@ -191,39 +164,39 @@
                         <h3>Free</h3>
                         <h4>$0<span>per month</span></h4>
                         <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                            <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+                            <li><i class="bx bx-check"></i> Free consultation</li>
+                            <li><i class="bx bx-check"></i> Preparing an offer</li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Collection of the necessary fees</span></li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Weekly cleaning</span></li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Partial entrance maintenance</span></li>
                         </ul>
-                        <a href="#" class="get-started-btn">Get Started</a>
+                        <a class="get-started-btn" asp-area="" asp-controller="Contact" asp-action="Index">Get Started</></a>
                     </div>
 
                     <div class="col-lg-4 box featured">
-                        <h3>Business</h3>
+                        <h3>Start package</h3>
                         <h4>$29<span>per month</span></h4>
                         <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                            <li><i class="bx bx-check"></i> Collection of the necessary fees</li>
+                            <li><i class="bx bx-check"></i> Weekly cleaning</li>
+                            <li><i class="bx bx-check"></i> Partial entrance maintenance</li>
+                            <li><i class="bx bx-check"></i> Online check for unpaid bills</li>
+                            <li class="na"><i class="bx bx-x"></i> <span>Full building maintenance</span></li>
                         </ul>
-                        <a href="#" class="get-started-btn">Get Started</a>
+                        <a class="get-started-btn" asp-area="" asp-controller="Contact" asp-action="Index">Get Started</></a>
                     </div>
 
                     <div class="col-lg-4 box">
-                        <h3>Developer</h3>
+                        <h3>Full package</h3>
                         <h4>$49<span>per month</span></h4>
                         <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                            <li><i class="bx bx-check"></i> Collection of the necessary fees</li>
+                            <li><i class="bx bx-check"></i> Weekly cleaning</li>
+                            <li><i class="bx bx-check"></i> Partial entrance maintenance</li>
+                            <li><i class="bx bx-check"></i> Online check for unpaid bills</li>
+                            <li><i class="bx bx-check"></i> Full building maintenance</li>
                         </ul>
-                        <a href="#" class="get-started-btn">Get Started</a>
+                        <a class="get-started-btn" asp-area="" asp-controller="Contact" asp-action="Index">Get Started</></a>
                     </div>
 
                 </div>

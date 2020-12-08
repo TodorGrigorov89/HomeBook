@@ -1,0 +1,68 @@
+﻿@using HomeBook.Common
+@model HomeBook.Web.ViewModels.Services.BillsViewModel
+@{ this.ViewData["Title"] = "Bills"; }
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li class="active"><a asp-area="" asp-controller="Services" asp-action="Index">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<h2>
+    Your bills
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">User</th>
+            <th scope="col">Apartment Id</th>
+            <th scope="col">Payment</th>
+            <th scope="col">From Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.UserEmail</td>
+            @foreach (var id in Model.ApartmentsIds)
+            {
+                <td>@id</td>
+            }
+            @if (Model.Payments.Count == 0)
+            {
+                <text>
+                   <td class='label'>No current payments</td>
+                </text>                
+            }
+            else
+            {
+                @foreach (var payment in Model.Payments)
+            {
+                <td>@payment</td>
+            }
+                @foreach (var date in Model.Dates)
+            {
+                <td>@date</td>
+            }
+            }
+            <td></td>
+        </tr>
+    </tbody>
+</table>

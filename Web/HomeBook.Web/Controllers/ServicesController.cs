@@ -61,21 +61,19 @@
                 userApartmentsIds.Add(apartment.ApartmentId);
             }
 
-            var allPayments = this.paymentsRepository.All().ToList();
+            var allPayments = this.paymentsRepository.All().Where(x => x.ApartmentId == userApartmentsIds.FirstOrDefault());
 
             var userApartmentPayments = new List<decimal>();
             var paymentsDates = new List<string>();
 
             foreach (var apartmentId in userApartmentsIds)
             {
-                if (allPayments.Any(x => x.ApartmentId == apartmentId))
-                {
+
                     foreach (var payment in allPayments)
                     {
                         userApartmentPayments.Add(payment.TotalSum);
                         paymentsDates.Add(payment.CreatedOn.ToString());
                     }
-                }
             }
 
             var viewModel = new BillsViewModel

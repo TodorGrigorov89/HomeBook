@@ -31,6 +31,6 @@ This project is licensed under the MIT License.
 
 Using ASP.NET-MVC-Template developed by:
 
-   :black_circle: Nikolay Kostov <br />
+   :blue_circle: Nikolay Kostov <br />
    :black_circle:Vladislav Karamfilov <br />
    :black_circle: Stoyan Shopov <br />

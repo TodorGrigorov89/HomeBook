@@ -5,7 +5,6 @@ Homebook is a web application offering online connection with us and the service
  :notebook: My web project for the C# ASP.NET Core course at SoftUni.
 
 
-:hammer:
 # Created with
 
 :black_circle: MS Visual Studio 2019 <br />
@@ -32,6 +31,6 @@ This project is licensed under the MIT License.
 
 Using ASP.NET-MVC-Template developed by:
 
-    Nikolay Kostov
-    Vladislav Karamfilov
-    Stoyan Shopov
+   :black_circle: Nikolay Kostov
+   :black_circle:Vladislav Karamfilov
+   :black_circle: Stoyan Shopov

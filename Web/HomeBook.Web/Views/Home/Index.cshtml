@@ -67,7 +67,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="icon-box icon-box-pink">
                         <div class="icon"><i class="bx bx-archive"></i></div>
-                        <h4 class="title"><a href="">Management</a></h4>
+                        <h4 class="title"><a asp-area="" asp-controller="Services" asp-action="Index">Management</a></h4>
                         <p class="description">Registration of condominiums, financial and operational reports and more</p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box icon-box-cyan">
                         <div class="icon"><i class="bx bx-support"></i></div>
-                        <h4 class="title"><a href="">Maintenance</a></h4>
+                        <h4 class="title"><a asp-area="" asp-controller="Services" asp-action="Index">Maintenance</a></h4>
                         <p class="description">24/7 Elevator maintenance, stair lighting, intercom system and more</p>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box icon-box-green">
                         <div class="icon"><i class="bx bx-building-house"></i></div>
-                        <h4 class="title"><a href="">Cleaning</a></h4>
+                        <h4 class="title"><a asp-area="" asp-controller="Services" asp-action="Index">Cleaning</a></h4>
                         <p class="description">Cleaning of residential entrances, apartments, buildings, offices.</p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box icon-box-blue">
                         <div class="icon"><i class="bx bx-money"></i></div>
-                        <h4 class="title"><a href="">Taxes and Payments</a></h4>
+                        <h4 class="title"><a asp-area="" asp-controller="Services" asp-action="Index">Taxes and Payments</a></h4>
                         <p class="description">Collection of fees on the exact date, as well as online check for unpaid bills</p>
                     </div>
                 </div>
@@ -107,21 +107,21 @@
             <div class="row">
                 <div class="col-lg-6 video-box">
                     <img src="~/img/why-us.jpg" class="img-fluid" alt="">
-                    <a href="https://youtu.be/AcCQKUOpNUM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    <a href="@GlobalConstants.SampleIndexVideo" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
 
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                        <h4 class="title"><a asp-area="" asp-controller="Contact" asp-action="Index">Individual solutions</a></h4>
+                        <p class="description">Please contact us for more information</p>
                     </div>
 
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-gift"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                        <h4 class="title"><a asp-area="" asp-controller="Contact" asp-action="Index">Discounts</a></h4>
+                        <p class="description">Special discounts for new customers</p>
                     </div>
 
                 </div>
@@ -134,8 +134,8 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Features</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <h2>Services</h2>
+                <p>@GlobalConstants.SystemName is a commercial company established for the purpose of management, maintenance and cleaning of the condominium. In our work we hold on to correctness, accuracy and responsibility. For us, a satisfied customer is the key to success. With the services we offer as a professional house manager you will save time and nerves. We will provide the peace of mind you need!</p>
             </div>
 
             <div class="row" data-aos="fade-up">
@@ -143,14 +143,13 @@
                     <img src="~/img/features-1.svg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-4">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <h3>Professional house manager</h3>
                     <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                        With this service we take over the management and maintenance of your condominium, striving to provide you with peace of mind and a better way of life.
                     </p>
                     <ul>
-                        <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li><i class="icofont-check"></i> Keeping a book of owners, according to CMA</li>
+                        <li><i class="icofont-check"></i> Оrganizing and conducting general meetings in accordance with the provisions of CMA.</li>
                     </ul>
                 </div>
             </div>
@@ -160,15 +159,12 @@
                     <img src="~/img/features-2.svg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Corporis temporibus maiores provident</h3>
+                    <h3>Cashier</h3>
                     <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                        Through this service we organize and perform the financial management of the condominium. We prepare the best possible budget for the occupants of the entrance according to their needs. It should be approved by the General Assembly. Our cashiers collect the approved fees according to a pre-approved schedule.
                     </p>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                        Preparation of a budget for the entrance. Collection of fees for general needs. Preparation of reports on the collected amounts. Payment on time of the monthly expenses.
                     </p>
                 </div>
             </div>
@@ -178,12 +174,12 @@
                     <img src="~/img/features-3.svg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5">
-                    <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+                    <h3>Effective building management</h3>
+                    <p>Effective building management is a guarantee for the protection of the investment we make when buying a property in a building with a condominium regime. Professionalism in the care of both the technical base and in financial and administrative matters saves hundreds of levs per year to owners who have chosen the foresight to entrust the maintenance of their property to professionals, before the definitely wrong choice to rely on an impostor who lacks time, knowledge, capabilities, and sometimes moral qualities to perform such responsible functions.</p>
                     <ul>
-                        <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="icofont-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+                        <li><i class="icofont-check"></i> You certainly would not entrust the care of your children and your health to amateurs.</li>
+                        <li><i class="icofont-check"></i> Don't do it with your real estate either.</li>
+                        <li><i class="icofont-check"></i> We offer you to contact us so that we can be useful to you!</li>
                     </ul>
                 </div>
             </div>
@@ -193,15 +189,12 @@
                     <img src="~/img/features-4.svg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 pt-5 order-2 order-md-1">
-                    <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+                    <h3>Cleaning</h3>
                     <p class="font-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
+                        As cleaning is one of the main factors for the pleasant atmosphere in each condominium, the development of professional cleaning and hygiene is our long-term priority. The cleaning is done according to a schedule with quality detergents.
                     </p>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
+                        Sweeping of floor coverings. Wet cleaning and disinfection of flooring. Dust and cobweb cleaning. Sweeping the space in front of the entrance. Sweeping of external stairs and landings. Cleaning and disinfection of the elevator cabine.
                     </p>
                 </div>
             </div>

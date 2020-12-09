@@ -22,6 +22,10 @@
 
         public const string HomeBookLinkedIn = "https://www.linkedin.com/in/homebook-bulgaria-08b369200/";
 
+        public const string Epay = "https://www.epay.bg/v3main/front";
+
+        public const string SampleIndexVideo = "https://youtu.be/AcCQKUOpNUM";
+
         public static class AccountsSeeding
         {
             public const string Password = "123456";

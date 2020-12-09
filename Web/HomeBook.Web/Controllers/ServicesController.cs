@@ -68,7 +68,6 @@
 
             foreach (var apartmentId in userApartmentsIds)
             {
-
                     foreach (var payment in allPayments)
                     {
                         userApartmentPayments.Add(payment.TotalSum);

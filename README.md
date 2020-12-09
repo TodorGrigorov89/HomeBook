@@ -5,7 +5,7 @@ Homebook is a web application offering online connection with us and the service
  :notebook: My web project for the C# ASP.NET Core course at SoftUni.
 
 
-# Created with
+## Created with
 
 :black_circle: MS Visual Studio 2019 <br />
 :black_circle: ASP.NET Core 3.1 <br />
@@ -23,11 +23,11 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: Responsive Design <br />
 :black_circle: Bootstrap Moderna theme <br />
 
-# License
+## License
 
 This project is licensed under the MIT License.
 
-# Acknowledgments
+## Acknowledgments
 
 Using ASP.NET-MVC-Template developed by:
 

@@ -22,3 +22,15 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: Custom Validation Attributes <br />
 :black_circle: Responsive Design <br />
 :black_circle: Bootstrap Moderna theme<br />
+
+# License
+
+This project is licensed under the MIT License.
+
+# Acknowledgments
+
+Using ASP.NET-MVC-Template developed by:
+
+    Nikolay Kostov
+    Vladislav Karamfilov
+    Stoyan Shopov

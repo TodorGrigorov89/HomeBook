@@ -23,6 +23,10 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: Responsive Design <br />
 :black_circle: Bootstrap Moderna theme <br />
 
+## DB diagram
+
+
+
 ## License
 
 This project is licensed under the MIT License.

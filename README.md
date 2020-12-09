@@ -23,7 +23,7 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: Responsive Design <br />
 :black_circle: Bootstrap Moderna theme <br />
 
-## DB diagram
+## Microsoft SSMS diagram
 
 ![Database diagram](https://user-images.githubusercontent.com/46685187/101680910-0b921700-3a6a-11eb-9e7b-82fe5b793756.JPG)
 

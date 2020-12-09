@@ -10,8 +10,8 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: ASP.NET Core 3.1 <br />
 :black_circle: Entity Framework (EF) Core 3.1 <br />
 :black_circle: ASP.NET Identity System <br />
-:black_circle: MVC Areas with Multiple Layouts <br />
-:black_circle: Razor Pages, Sections, Partial Views <br />
+:black_circle: MVC Areas <br />
+:black_circle: Razor Pages, Partial Views <br />
 :black_circle: View Components <br />
 :black_circle: Repository Pattern <br />
 :black_circle: Auto Мapping <br />

@@ -20,7 +20,7 @@ Homebook is a web application offering online connection with us and the service
 :black_circle: Data Validation in the Models and Input View Models <br />
 :black_circle: Custom Validation Attributes <br />
 :black_circle: Responsive Design <br />
-:black_circle: Bootstrap Moderna theme <br />
+:black_circle: Bootstrap 4 Moderna theme <br />
 
 ## Microsoft SSMS diagram
 

@@ -16,6 +16,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.9" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="Moq" Version="4.14.7" />
+    <PackageReference Include="MyTested.AspNetCore.Mvc" Version="3.1.2" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <PrivateAssets>all</PrivateAssets>
@@ -29,6 +31,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\HomeBook.Data\HomeBook.Data.csproj" />
     <ProjectReference Include="..\..\Services\HomeBook.Services.Data\HomeBook.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Web\HomeBook.Web\HomeBook.Web.csproj" />
   </ItemGroup>
 
 </Project>

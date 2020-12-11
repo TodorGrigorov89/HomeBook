@@ -9,6 +9,7 @@
     using HomeBook.Data.Repositories;
     using HomeBook.Data.Seeding;
     using HomeBook.Services.Data.Apartments;
+    using HomeBook.Services.Data.BlogPosts;
     using HomeBook.Services.Data.Buildings;
     using HomeBook.Services.Data.Cities;
     using HomeBook.Services.Data.Countries;
@@ -84,6 +85,7 @@
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IUsersApartmentsService, UsersApartmentsService>();
             services.AddTransient<IUsersDocumentsService, UsersDocumentsService>();
+            services.AddTransient<IBlogPostsService, BlogPostsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

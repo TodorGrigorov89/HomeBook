@@ -10,6 +10,7 @@
     using HomeBook.Data.Models;
     using HomeBook.Data.Repositories;
     using HomeBook.Services.Data.Apartments;
+    using HomeBook.Services.Data.BlogPosts;
     using HomeBook.Services.Data.Buildings;
     using HomeBook.Services.Data.Cities;
     using HomeBook.Services.Data.Countries;
@@ -88,6 +89,7 @@
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IUsersApartmentsService, UsersApartmentsService>();
             services.AddTransient<IUsersDocumentsService, UsersDocumentsService>();
+            services.AddTransient<IBlogPostsService, BlogPostsService>();
 
             return services;
         }

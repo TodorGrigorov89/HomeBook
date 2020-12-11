@@ -107,23 +107,17 @@
 
             public const int ContactFormNameMaxLength = 50;
 
-            // public const int TitleMaxLength = 60;
-            //
-            // public const int TitleMinLength = 5;
-            //
-            // public const int ContentMaxLength = 3000;
-            //
-            // public const int ContentMinLength = 700;
-            //
-            // public const int NameMinLength = 2;
-            //
-            // public const int DescriptionMaxLength = 800;
-            //
-            // public const int DescriptionMinLength = 50;
-            //
-            // public const int AddressMaxLength = 100;
-            //
-            // public const int AddressMinLength = 5;
+            public const int BlogTitleMinLength = 10;
+
+            public const int BlogTitleMaxLength = 70;
+
+            public const int BlogContentMinLength = 20;
+
+            public const int BlogContentMaxLength = 5000;
+
+            public const int BlogAuthorMinLength = 3;
+
+            public const int BlogAuthorMaxLength = 50;
         }
 
         public static class ErrorMessages
@@ -177,6 +171,12 @@
             public const string PageNotFound = "The page is not found. Looks like we can't find what you're looking for.";
 
             public const string DuplicateValue = "The value you are trying to enter already exists.";
+
+            public const string BlogTitleLength = "Title length must be between 10 and 70 characters.";
+
+            public const string BlogContentLength = "Title length must be between 20 and 5000 characters.";
+
+            public const string BlogAuthorNameLength = "Author length must be between 3 and 50 characters.";
 
             // public const string Title = "Title must be between 5 and 60 characters.";
             //

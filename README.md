@@ -24,7 +24,7 @@ Homebook is a web application offering online connection with us and the service
 
 ## Microsoft SSMS diagram
 
-![Database diagram](https://user-images.githubusercontent.com/46685187/101680910-0b921700-3a6a-11eb-9e7b-82fe5b793756.JPG)
+![HomeBookDB](https://user-images.githubusercontent.com/46685187/101926375-c261d480-3bdb-11eb-9b1c-63a6930c829a.JPG)
 
 ## License
 

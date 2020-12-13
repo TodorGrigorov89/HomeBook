@@ -3,6 +3,8 @@
     using System.ComponentModel.DataAnnotations;
 
     using HomeBook.Common;
+    using HomeBook.Web.ViewModels.ValidationAttributes;
+    using Microsoft.AspNetCore.Http;
 
     public class BlogPostInputModel
     {
@@ -28,6 +30,8 @@
         public string Author { get; set; }
 
         [Required]
-        public string ImageUrl { get; set; }
+        [DataType(DataType.Upload)]
+        [ImageValidationAttribute(ErrorMessage = GlobalConstants.ErrorMessages.ImageFormatAndSize)]
+        public IFormFile Image { get; set; }
     }
 }

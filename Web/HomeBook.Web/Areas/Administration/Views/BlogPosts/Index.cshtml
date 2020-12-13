@@ -1,0 +1,76 @@
+﻿@model HomeBook.Web.ViewModels.BlogPosts.BlogPostListViewModel
+@using HomeBook.Common
+@{ this.ViewData["Title"] = "Blog posts"; }
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                <li class="active"><a asp-area="" asp-controller="Services" asp-action="Index">Services</a></li>
+                <li class="active"><a asp-area="" asp-controller="BlogPosts" asp-action="Index">Blog</a></li>
+                <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <partial name="_LoginPartial" />
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+<br />
+<br />
+<br />
+<br />
+<h2>
+    All Blog Posts (@Model.BlogPosts.Count())
+    <span>
+        <a class="btn btn-info" asp-area="Administration" asp-controller="BlogPosts" asp-action="AddBlogPost">Add New Blog Post</a>
+    </span>
+</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Delete Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in this.Model.BlogPosts)
+        {
+            <tr>
+               <th scope="row">@blog.Author</th>
+               <td>
+                   <a href" asp-area="Home" asp-controller="BlogPosts" asp-action="SinglePost" asp-route-id="@blog.Id">
+                       @blog.Title
+                   </a>
+               </td>
+               <td>@(blog.Content.Length > 250 ? blog.Content.Substring(0, 250) + "..." : blog.Content)</td>
+               <td>
+                   @if (blog.Id <= GlobalConstants.SeededDataCounts.BlogPosts)
+                   {
+                        <div class="text-muted" style="font-size:smaller">
+                            Seeded Data <br />Cannot Be Deleted
+                        </div> }
+                    else
+                    {
+                        <form method="post">
+                            <button type="submit" class="btn btn-danger btn-sm"
+                                asp-area="Administration" asp-controller="BlogPosts" asp-action="DeleteBlogPost" asp-route-id="@blog.Id">
+                                Delete
+                             </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

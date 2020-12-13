@@ -6,8 +6,6 @@
 
         public const string AdministratorRoleName = "Administrator";
 
-        public const string CloudName = "HomeBook";
-
         public const string HomeBookAddress = "Bulgaria, Varna 9000";
 
         public const string HomeBookPhoneNumber = "+359 887 665 232";
@@ -178,17 +176,7 @@
 
             public const string BlogAuthorNameLength = "Author length must be between 3 and 50 characters.";
 
-            // public const string Title = "Title must be between 5 and 60 characters.";
-            //
-            // public const string Content = "Content must be between 700 and 3500 characters.";
-            //
-            // public const string Author = "Author name must be between 2 and 40 characters.";
-            //
-            // public const string Name = "Name must be between 2 and 40 characters.";
-            //
-            // public const string Description = "Description must be between 50 and 700 characters.";
-            //
-            // public const string Address = "Address must be between 5 and 100 characters.";
+            public const string ImageFormatAndSize = "Please select a JPG, JPEG or PNG image smaller than 1MB.";
         }
 
         public static class SeededDataCounts
@@ -210,6 +198,19 @@
             public const int Documents = 1;
 
             public const int UserApartments = 1;
+
+            public const int BlogPosts = 3;
+        }
+
+        public static class Images
+        {
+            public const string BlogPostFirstImage = "http://bvo-arquitectos.com/wp-content/uploads/freshizer/07d083c51c7f8043623670109a199965_ley-construccion-santo-domingo-1382-777-c-90.jpg";
+
+            public const string BlogPostSecondImage = "https://www.lesaonline.org/wp-content/uploads/2018/05/iStock-522540838_CondominiumLawUpdate-1024x683.jpg";
+
+            public const string BlogPostThirdImage = "https://www.acq-intl.com/wp-content/uploads/2019/12/Kettani-Law-Firm-1.jpg";
+
+            public const string ImageMissing = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1264px-Comic_image_missing.svg.png";
         }
     }
 }

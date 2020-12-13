@@ -26,7 +26,7 @@
                 Title = blogPostInputModel.Title,
                 Content = blogPostInputModel.Content,
                 Author = blogPostInputModel.Author,
-                ImageUrl = blogPostInputModel.ImageUrl,
+                ImageUrl = blogPostInputModel.Image.ToString(),
             });
             await this.blogPostsRepository.SaveChangesAsync();
         }

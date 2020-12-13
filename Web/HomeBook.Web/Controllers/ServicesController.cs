@@ -5,10 +5,6 @@
 
     using HomeBook.Data.Common.Repositories;
     using HomeBook.Data.Models;
-    using HomeBook.Services.Data.Apartments;
-    using HomeBook.Services.Data.Payments;
-    using HomeBook.Services.Data.Users;
-    using HomeBook.Services.Data.UsersApartments;
     using HomeBook.Web.ViewModels.Services;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -17,22 +13,12 @@
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IDeletableEntityRepository<UserApartment> usersApartmentsRepository;
-        private readonly IDeletableEntityRepository<Apartment> apartmentsRepository;
         private readonly IDeletableEntityRepository<Payment> paymentsRepository;
-        private readonly IApartmentsService apartmentsService;
-        private readonly IUsersApartmentsService usersApartmentsService;
-        private readonly IUsersService usersService;
-        private readonly IPaymentsService paymentsService;
 
-        public ServicesController(IApartmentsService apartmentsService, IUsersService usersService, IPaymentsService paymentsService, IUsersApartmentsService usersApartmentsService, UserManager<ApplicationUser> userManager, IDeletableEntityRepository<UserApartment> usersApartmentsRepository, IDeletableEntityRepository<Apartment> apartmentsRepository, IDeletableEntityRepository<Payment> paymentsRepository)
+        public ServicesController(UserManager<ApplicationUser> userManager, IDeletableEntityRepository<UserApartment> usersApartmentsRepository, IDeletableEntityRepository<Payment> paymentsRepository)
         {
-            this.apartmentsService = apartmentsService;
-            this.usersService = usersService;
-            this.paymentsService = paymentsService;
-            this.usersApartmentsService = usersApartmentsService;
             this.userManager = userManager;
             this.usersApartmentsRepository = usersApartmentsRepository;
-            this.apartmentsRepository = apartmentsRepository;
             this.paymentsRepository = paymentsRepository;
         }
 

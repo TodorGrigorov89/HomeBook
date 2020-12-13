@@ -38,6 +38,7 @@
                               new UserApartments(),
                               new DocumentsSeeder(),
                               new UserDocumentsSeeder(),
+                              new BlogPostsSeeder(),
                           };
 
             foreach (var seeder in seeders)

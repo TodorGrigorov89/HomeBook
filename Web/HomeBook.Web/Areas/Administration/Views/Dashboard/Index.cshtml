@@ -33,6 +33,13 @@
 <h1>@this.ViewData["Title"]</h1>
 
 <div>
+    <a asp-area="Administration" asp-controller="BlogPosts" asp-action="Index"
+       class="list-group-item list-group-item-action bg-light">Blog posts</a>
+
+    <div class="ml-5 my-2">
+        <a class="btn btn-outline-info btn-sm" asp-area="Administration" asp-controller="BlogPosts" asp-action="AddBlogPost">Add New Blog Post</a>
+    </div>
+
     <a asp-area="Administration" asp-controller="Countries" asp-action="Index"
        class="list-group-item list-group-item-action bg-light">Countries</a>
 

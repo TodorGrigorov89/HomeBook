@@ -1,0 +1,126 @@
+﻿@using HomeBook.Common
+@model HomeBook.Web.ViewModels.BlogPosts.BlogPostViewModel
+@{
+    this.ViewData["Title"] = "Blog";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Blog - @GlobalConstants.SystemName</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Moderna - v2.0.1
+    * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container">
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a></h1>
+            </div>
+
+            <nav class="nav-menu float-right d-none d-lg-block">
+                <ul>
+                    <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="active"><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                    <li class="active"><a asp-area="" asp-controller="Services" asp-action="Index">Services</a></li>
+                    <li class="active"><a asp-area="" asp-controller="BlogPosts" asp-action="Index">Blog</a></li>
+                    <li class="active"><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                    <partial name="_LoginPartial" />
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Blog Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Blog</h2>
+                    <ol>
+                        <li class="text-light"><a class="" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li>Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </section><!-- End Blog Section -->
+        <!-- ======= Blog Section ======= -->
+        <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-8 entries">
+                        <article class="entry entry-single">
+                            <div class="entry-img">
+                                <img src="@Model.ImageUrl" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="entry-title">
+                                <a href="">@Model.Title</a>
+                            </h2>
+
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">@Model.Author</a></li>
+                                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="">@Model.CreatedOn</time></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="entry-content">
+                                <p>
+                                    @Model.Content
+                                </p>
+
+                            </div>
+
+                        </article><!-- End blog entry -->
+                    </div>
+                </div>
+                <a class="btn btn-primary" onclick="history.go(-1); return false;" href="#">Back</a><br />
+            </div>
+        </section>
+    </main><!-- End #main -->
+
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+</body>
+
+</html>

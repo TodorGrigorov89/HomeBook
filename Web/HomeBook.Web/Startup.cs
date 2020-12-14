@@ -66,6 +66,7 @@
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
+            services.AddApplicationInsightsTelemetry();
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));

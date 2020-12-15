@@ -204,13 +204,12 @@
 
         public static class Images
         {
-            public const string BlogPostFirstImage = "http://bvo-arquitectos.com/wp-content/uploads/freshizer/07d083c51c7f8043623670109a199965_ley-construccion-santo-domingo-1382-777-c-90.jpg";
+            public const string BlogPostFirstImage = "https://homebook.blob.core.windows.net/images/CondominiumManagementAct.jpg";
 
-            public const string BlogPostSecondImage = "https://www.lesaonline.org/wp-content/uploads/2018/05/iStock-522540838_CondominiumLawUpdate-1024x683.jpg";
+            public const string BlogPostSecondImage = "https://homebook.blob.core.windows.net/images/iStock-522540838_CondominiumLawUpdate-1024x683.jpg";
 
-            public const string BlogPostThirdImage = "https://www.acq-intl.com/wp-content/uploads/2019/12/Kettani-Law-Firm-1.jpg";
+            public const string BlogPostThirdImage = "https://homebook.blob.core.windows.net/images/ezgif.com-webp-to-jpg.jpg";
 
-            public const string ImageMissing = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1264px-Comic_image_missing.svg.png";
         }
     }
 }

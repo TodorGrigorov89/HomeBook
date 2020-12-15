@@ -16,7 +16,7 @@
         private IBlogPostsService Service => this.ServiceProvider.GetRequiredService<IBlogPostsService>();
 
         [Fact]
-        public async Task TestAddAsyncApartmentShouldWorkCorrectly()
+        public async Task TestAddAsyncBlogPostsShouldWorkCorrectly()
         {
             IFormFile file = new FormFile(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file")), 0, 0, "Data", "dummy.img");
             await this.Service.AddAsync(new BlogPostInputModel
